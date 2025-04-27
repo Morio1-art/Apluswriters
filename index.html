@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A+ Writers Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background: url('tutor overview.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 60px;
+      bottom: 60px;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    header {
+      background: url('imageslogo.jpg') center center no-repeat;
+      background-size: cover;
+      position: relative;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .header-content h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #ffeb3b;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    .header-content p {
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .cta-btn {
+      background: #ff9800;
+      padding: 0.5rem 1rem;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      display: inline-block;
+      font-size: 0.85rem;
+    }
+
+    nav {
+      background: #fff;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #6c63ff;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    h2 {
+      color: #ffeb3b;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      margin-left: 1.5rem;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .grid .text {
+      flex: 1 1 45%;
+    }
+
+    .grid .right-text {
+      flex: 1 1 45%;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .whatsapp-btn, .email-btn {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #25D366;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .email-btn {
+      background: #4285F4;
+    }
+
+    .reviews {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .testimonial-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .testimonial {
+      flex: 1 1 30%;
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial p {
+      font-style: italic;
+    }
+
+    .testimonial .stars {
+      color: #fbc02d;
+    }
+
+    .trust-signals {
+      margin-top: 2rem;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+
+    .trust-signals-container {
+      display: flex;
+      transition: transform 0.5s ease;
+      width: max-content;
+      animation: slide 30s linear infinite;
+    }
+
+    .trust-signal {
+      margin: 0 2rem;
+      display: inline-block;
+      font-weight: bold;
+      color: #fff;
+      white-space: nowrap;
+    }
+
+    .trust-signals img {
+      width: 24px;
+      vertical-align: middle;
+      margin-right: 0.25rem;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.85);
+      color: #eee;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    @media(max-width: 768px) {
+      .grid {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .testimonial-wrapper {
+        flex-direction: column;
+      }
+
+      .grid .right-text {
+        margin-top: 2rem;
+      }
+      
+      .trust-signals-container {
+        animation: slide-mobile 20s linear infinite;
+      }
+      
+      @keyframes slide-mobile {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      nav {
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          white-space: nowrap;
+      }
+
+      nav a {
+          flex: 0 0 auto;
+          margin: 0 0.5rem;
+      }
+
+      .testimonial-wrapper {
+          display: block;
+          overflow: hidden;
+          height: auto;
+      }
+
+      .testimonial {
+          display: none;
+      }
+
+      .testimonial:nth-child(1),
+      .testimonial:nth-child(2) {
+          display: block;
+          flex: 0 0 100%;
+          margin-bottom: 1rem;
+      }
+
+      .testimonial-wrapper {
+          scroll-snap-type: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <h1>A+ WRITERS HUB</h1>
+      <p>Your Academic Success Partner – From Assignments to Thesis</p>
+      <a class="cta-btn" href="#contact">Get Help Now</a>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="intro">
+    <p>At A+ Writers Hub, we specialize in supporting students with quality, custom academic solutions. Whether you're tackling online classes, complex assignments, or final-year thesis, we're here to help you succeed.</p>
+  </section>
+
+  <section class="grid" id="services">
+    <div>
+      <h2>Our Services</h2>
+      <ul>
+        <li><i class="fas fa-pencil-alt"></i> Assignments (All disciplines)</li>
+        <li><i class="fas fa-laptop-code"></i> Online Classes & Tests Assistance</li>
+        <li><i class="fas fa-book"></i> Essays and Term Papers</li>
+        <li><i class="fas fa-graduation-cap"></i> Thesis and Dissertation Writing</li>
+        <li><i class="fas fa-lightbulb"></i> Research Proposals</li>
+        <li><i class="fas fa-edit"></i> Editing and Proofreading</li>
+      </ul>
+    </div>
+    <div class="right-text">
+      <h2>Why Choose Us?</h2>
+      <ul>
+        <li>Timely delivery & original work</li>
+        <li>Experienced academic writers</li>
+        <li>Affordable rates</li>
+        <li>Confidential and secure service</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="how-it-works">
+    <h2>How It Works</h2>
+    <div class="grid">
+      <div class="text">
+        <ul>
+          <li>1. Contact us via WhatsApp or Email</li>
+          <li>2. Share your assignment requirements</li>
+          <li>3. Get a quote and confirm your order</li>
+          <li>4. Receive high-quality work on time</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" class="reviews">
+    <h2>Reviews</h2>
+    <div class="testimonial-wrapper">
+      <div class="testimonial">
+        <p>"A+ Writers Hub saved my semester. Fast, reliable, and excellent work!"</p>
+        <div class="stars">★★★★★</div>
+      </div>
+      <div class="testimonial">
+        <p>"Professional service with timely delivery. Highly recommended!"</p>
+        <div class="stars">★★★★★</div>
+      </div>
+      <div class="testimonial">
+        <p>"Superb academic help! They made a real difference in my grades."</p>
+        <div class="stars">★★★★★</div>
+      </div>
+      <div class="testimonial">
+        <p>"Outstanding support and quality work. My go-to academic hub!"</p>
+        <div class="stars">★★★★★</div>
+      </div>
+    </div>
+    <div class="trust-signals">
+      <div class="trust-signals-container">
+        <span class="trust-signal">
+          <img src="https://flagcdn.com/us.svg" alt="US Flag">
+          <img src="https://flagcdn.com/gb.svg" alt="UK Flag">
+          <img src="https://flagcdn.com/ca.svg" alt="Canada Flag">
+          <img src="https://flagcdn.com/au.svg" alt="Australia Flag">
+          <img src="https://flagcdn.com/za.svg" alt="South Africa Flag">
+          Trusted by Students Worldwide
+        </span>
+        <span class="trust-signal">🔒 100% Confidential</span>
+        <span class="trust-signal">📄 Plagiarism-Free Guarantee</span>
+        <!-- Duplicate items for seamless looping -->
+        <span class="trust-signal">
+          <img src="https://flagcdn.com/us.svg" alt="US Flag">
+          <img src="https://flagcdn.com/gb.svg" alt="UK Flag">
+          <img src="https://flagcdn.com/ca.svg" alt="Canada Flag">
+          <img src="https://flagcdn.com/au.svg" alt="Australia Flag">
+          <img src="https://flagcdn.com/za.svg" alt="South Africa Flag">
+          Trusted by Students Worldwide
+        </span>
+        <span class="trust-signal">🔒 100% Confidential</span>
+        <span class="trust-signal">📄 Plagiarism-Free Guarantee</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Get in Touch</h2>
+    <a class="whatsapp-btn" href="https://wa.me/254741161628" target="_blank">Message us on WhatsApp</a>
+    <a class="email-btn" href="mailto:ewriter258@gmail.com?subject=Academic%20Assistance%20Request&body=Hello%2C%20I%20need%20help%20with...">Send us an Email</a>
+  </section>
+
+  <footer>
+    &copy; 2023 A+ Writers Hub. All rights reserved.
+  </footer>
+</body>
+</html>
